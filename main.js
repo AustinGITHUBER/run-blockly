@@ -6,15 +6,16 @@ div.style.top = '0px'
 div.style.left = '0px'
 div.style.width = `${1e308}px`
 div.style.height = `4991px`
-let toolbox = {
-    "kind": "flyoutToolbox",
-    "contents": Object.keys(Blockly.Blocks).map(type => ({
-        "kind": "block",
-        type
-    }))
-}
 document.body.append(div)
-window['workspace'] = Blockly.inject(div, {toolbox})
+window['workspace'] = Blockly.inject(div, {
+    toolbox: {
+        "kind": "flyoutToolbox",
+        "contents": Object.keys(Blockly.Blocks).map(type => ({
+            "kind": "block",
+            type
+        }))
+    }
+})
 let button = document.createElement('button')
 button.style.position = 'fixed'
 button.style.bottom = '0px'
