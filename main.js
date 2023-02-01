@@ -8,7 +8,7 @@ div.style.width = `${1e308}px`
 div.style.height = `4991px`
 document.body.append(div)
 window['workspace'] = Blockly.inject(div, {
-    toolbox: {
+    "toolbox": {
         "kind": "flyoutToolbox",
         "contents": Object.keys(Blockly.Blocks).map(type => ({
             "kind": "block",
