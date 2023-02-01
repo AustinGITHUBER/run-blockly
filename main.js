@@ -1,7 +1,6 @@
 'use strict'
 document.querySelector('div').remove()
 let div = document.createElement('div')
-div.id = 'blocklyDiv'
 div.style.position = 'absolute'
 div.style.top = '0px'
 div.style.left = '0px'
