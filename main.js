@@ -4,8 +4,12 @@ window['div'] = document.createElement('div')
 div.style.position = 'absolute'
 div.style.top = '0px'
 div.style.left = '0px'
-div.style.width = `${1e308}px`
-div.style.height = `1089px`
+let resize = () => {
+    div.style.height = `${innerHeight}px`
+    div.style.width = `${innerWidth}px`
+}
+resize()
+setInterval(resize, 1)
 document.body.append(div)
 window['toolbox'] = {
     "kind": "categoryToolbox",
@@ -22,7 +26,7 @@ window['workspace'] = Blockly.inject(div, {toolbox})
 window['toolboxObject'] = workspace.getToolbox()
 window['button'] = document.createElement('button')
 button.style.position = 'fixed'
-button.style.bottom = '0px'
+button.style.top = '0px'
 button.style.right = '0px'
 button.innerText = 'Run'
 console.log('The javascript code will be printed in the console every time you run the project.')
